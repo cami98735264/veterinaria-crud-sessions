@@ -1,8 +1,27 @@
 import axios from 'axios';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const summonErrorMessage = async (message) => {
+    await Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: message,
+        footer: '<a href="#">¿Por qué sucedió esto?</a>'
+      });
+};
+
+const summonSuccessMessage = async (message) => {
+    await Swal.fire({
+        icon: "success",
+        title: "¡Exito!",
+        text: message,
+      });
+}
+
 
 const onSubmitLogin = async (e) => {
+
     e.preventDefault();
     const {email, contraseña} = {email: document.getElementById("email").value, contraseña: document.getElementById("contraseña").value};
     try {
@@ -20,10 +39,14 @@ const onSubmitLogin = async (e) => {
             }
 
         })
-        console.log(request.data)
+        await summonSuccessMessage(request.data.message);
         window.location.href = "/";
     } catch(err) {
-        window.alert(err.response.data.message);
+        if(err.message == "Network Error") {
+            await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
+        } else {
+            await summonErrorMessage(err.response.data.message)
+        }
     }
 }
 
@@ -50,8 +73,12 @@ const onSubmitRegister = async (e) => {
         })
         window.location.href = "/";
     } catch(err) {
-        window.alert(err.response.data.message);
+        if(err.message == "Network Error") {
+            await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
+        } else {
+            await summonErrorMessage(err.response.data.message)
+        }
     }
 }
 
-export default { onSubmitLogin, onSubmitRegister }
+export default { onSubmitLogin, onSubmitRegister, summonErrorMessage, summonSuccessMessage }

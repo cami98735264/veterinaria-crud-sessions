@@ -1,34 +1,28 @@
 import { useContext } from "react"
 import loginContext from "../index.js";
 import { Navigate } from "react-router-dom";
-import axios from "axios"
+import Header from "./Header.js";
+import { GrConfigure } from "react-icons/gr";
+import { FaFolderPlus } from "react-icons/fa6";
+import { MdAssignmentAdd } from "react-icons/md";
+import { MdFolderOff } from "react-icons/md";
+
+
+import utilFunctions from 
+"../authorization_submits/index.js";
+
+import axios from "axios";
+const linksHeader = [{id: 4, nombre: "Configuración de la cuenta", url: "/account/config", icon: <GrConfigure style={{marginRight: "10px"}}/>}, {id: 3, nombre: "Citas Agendadas", url: "/citas", icon: <FaFolderPlus style={{marginRight: "10px"}}/> }, {id: 2, nombre: "Cancelar Cita", url: "/citas/cancelar", icon: <MdFolderOff style={{marginRight: "10px"}}/>}, {id: 1, nombre: "Agendar Cita", url: "/citas/agendar", icon: <MdAssignmentAdd style={{marginRight: "10px"}}/>}];
 const Main = () => {
-    const handleLogout = async () => {
-        try {
-            const response = await axios({
-                url: "http://localhost:3000/api/auth/logout",
-                method: "POST",
-                withCredentials: true,
-                headers: {
-                    Include: "application/json",
-                    "Content-Type": "application/json"
-                }
-            });
-            window.alert(response.data.message);
-            window.location.href = "/login";
-        } catch(err) {
-            window.alert(err.response.data.message)
-        }
-    }
     const context = useContext(loginContext);
-    const userData = context.userData;
-    const isLogged = context.isLogged
+    const { correo, telefono } = context.userData;
+    const isLogged = context.isLogged;
     return (
         <>
         {isLogged ? <>
-        <h1>Bienvenido! {userData.correo}, tu teléfono es: {userData.telefono} y estás actualmente logeado!</h1>
+        <Header elementos={linksHeader} email={correo}></Header>
+        <h1>Bienvenido! {correo}, tu teléfono es: {telefono} y estás actualmente logeado!</h1>
         <br></br>
-        <button onClick={handleLogout}>¡Cerrar sesión!</button>
         </> : <Navigate to={"/login"} replace={true}></Navigate>}
         </>
     )
