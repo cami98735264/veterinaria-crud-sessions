@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./css/Header.css";
 import axios from "axios";
 import utilFunctions from "../authorization_submits/index.js";
-import { FaBars, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaBars, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const Header = ({ elementos, email }) => {
             await utilFunctions.summonSuccessMessage(response.data.message);
             window.location.href = "/login";
         } catch(err) {
-            if(err.message == "Network Error") {
+            if(err.message === "Network Error") {
                 await utilFunctions.summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
             } else {
                 await utilFunctions.summonErrorMessage(err.response.data.message);
@@ -37,25 +37,28 @@ const Header = ({ elementos, email }) => {
                 <div>
                     <ul>
                         <li>
-                        <Link to="/">{email}</Link> 
+                        <Link to="/"  className="a-span-text-icons"><FaUserCircle className="icons" /> {email}</Link> 
                         </li>
                     </ul>
                 </div>
                 <div>
                     <ul>
                         {elementos.map(x => <li key={x.id}>
-                            <Link to={x.url}>{x.icon} {x.nombre}</Link></li>)}
+                            <span>
+                                <Link to={x.url}>{x.icon} {x.nombre}</Link>
+                            </span>
+                            </li>)}
                     </ul>
                 </div>
                 <div>
                     <ul>
-                        <li><Link onClick={handleLogout}><FaSignOutAlt style={{marginRight: "10px"}}/>Cerrar Sesión</Link></li>
+                        <li><Link onClick={handleLogout}  className="a-span-text-icons"><FaSignOutAlt className="icons"/>Cerrar Sesión</Link></li>
                     </ul>
                 </div>
             </div>
             <div className="main-mobile">
                 <div className="main-mobile-minimized">
-                    <span><Link to="/"><FaUser style={{margin: "0 10px"}}/> {email}</Link></span>
+                    <span><Link to="/"><FaUserCircle className="icons" /> {email}</Link></span>
                     <span className="icono-barras" onClick={() => {
         const set = toggleMobileList ? false : true;
         const mobileListOption = toggleMobileList ? "none" : "unset";
@@ -72,7 +75,7 @@ const Header = ({ elementos, email }) => {
                     </div>
                     <div>
                         <ul>
-                            <li><Link onClick={handleLogout}><FaSignOutAlt style={{marginRight: "10px"}}/> Cerrar Sesión</Link></li>
+                            <li><Link onClick={handleLogout}  className="a-span-text-icons"><FaSignOutAlt className="icons"/> Cerrar Sesión</Link></li>
                         </ul>
                     </div>
                 </div>

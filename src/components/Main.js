@@ -7,12 +7,7 @@ import { FaFolderPlus } from "react-icons/fa6";
 import { MdAssignmentAdd } from "react-icons/md";
 import { MdFolderOff } from "react-icons/md";
 
-
-import utilFunctions from 
-"../authorization_submits/index.js";
-
-import axios from "axios";
-const linksHeader = [{id: 4, nombre: "Configuración de la cuenta", url: "/account/config", icon: <GrConfigure style={{marginRight: "10px"}}/>}, {id: 3, nombre: "Citas Agendadas", url: "/citas", icon: <FaFolderPlus style={{marginRight: "10px"}}/> }, {id: 2, nombre: "Cancelar Cita", url: "/citas/cancelar", icon: <MdFolderOff style={{marginRight: "10px"}}/>}, {id: 1, nombre: "Agendar Cita", url: "/citas/agendar", icon: <MdAssignmentAdd style={{marginRight: "10px"}}/>}];
+const linksHeader = [{id: 4, nombre: "Configuración de la cuenta", url: "/account/config", icon: <GrConfigure className="icons" />}, {id: 3, nombre: "Citas Agendadas", url: "/citas", icon: <FaFolderPlus className="icons"/> }, {id: 2, nombre: "Cancelar Cita", url: "/citas/cancelar", icon: <MdFolderOff className="icons"/>}, {id: 1, nombre: "Agendar Cita", url: "/citas/agendar", icon: <MdAssignmentAdd className="icons"/>}];
 const Main = () => {
     const context = useContext(loginContext);
     const { correo, telefono } = context.userData;

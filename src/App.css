@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 17px;
+  font-size: 1em;
   font-family: "Open Sans", sans-serif;
 
 }
@@ -23,7 +23,7 @@
 }
 
 .formCredenciales input {
-  font-size: 16px;
+  font-size: 1em;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   outline: none;
   padding: 8px;
@@ -43,9 +43,9 @@
 }
 
 .formCredenciales h1 {
-  margin: 15px;
+  margin: 35px auto;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.2em;
 }
 
 .formCredenciales button {
@@ -64,4 +64,9 @@
 .formCredenciales .span-link-credentials {
   display: block;
   margin: 29px 8px;
+}
+
+.icons {
+  color: #fff;
+  margin-right: 15px;
 }

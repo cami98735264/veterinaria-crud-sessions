@@ -3,10 +3,12 @@
 }
 
 .mainNav .main ul li {
+    
     float: right;
 }
 .mainNav ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 20px;
     transition: background-color 0.5s ease-out;
 }

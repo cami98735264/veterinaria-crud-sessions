@@ -34,7 +34,7 @@ const FormCredenciales = (props) => {
             </div>
             <div className="bottom-credenciales">
                 <button className="boton-submit-credenciales">{props.motivo}</button>
-                <span className="span-link-credentials"><a href={props.motivo === "Iniciar Sesión" ? "/signup" : "/login"}>{props.motivo}</a></span>
+                <span className="span-link-credentials"><a href={props.motivo === "Iniciar Sesión" ? "/signup" : "/login"}>{props.motivo === "Iniciar Sesión" ? "Registrarse" : "Iniciar Sesión"}</a></span>
             </div>
         </form> : <Navigate to={"/"} replace={true}></Navigate>}
         </>
