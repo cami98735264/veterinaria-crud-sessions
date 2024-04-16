@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./css/Header.css";
 import axios from "axios";
 import utilFunctions from "../authorization_submits/index.js";
 import { FaBars, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
-
 import { useState } from "react";
 
 
@@ -52,7 +51,7 @@ const Header = ({ elementos, email }) => {
                 </div>
                 <div>
                     <ul>
-                        <li><Link onClick={handleLogout}  className="a-span-text-icons"><FaSignOutAlt className="icons"/>Cerrar Sesión</Link></li>
+                        <li><Link onClick={handleLogout} to={"/login"}  className="a-span-text-icons"><FaSignOutAlt className="icons"/>Cerrar Sesión</Link></li>
                     </ul>
                 </div>
             </div>
@@ -75,7 +74,7 @@ const Header = ({ elementos, email }) => {
                     </div>
                     <div>
                         <ul>
-                            <li><Link onClick={handleLogout}  className="a-span-text-icons"><FaSignOutAlt className="icons"/> Cerrar Sesión</Link></li>
+                            <li><Link onClick={handleLogout} to={"/login"}  className="a-span-text-icons"><FaSignOutAlt className="icons"/> Cerrar Sesión</Link></li>
                         </ul>
                     </div>
                 </div>
