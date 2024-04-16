@@ -5,8 +5,10 @@ import utilFunctions from "../authorization_submits/index.js";
 import { FaBars, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 
-
 const Header = ({ elementos, email }) => {
+    const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/#/login" : "/veterinaria-crud-sessions/#/login";
+    console.log(redirectUrl)
+    const navigate = useNavigate();
     const [toggleMobileList, setToggleMobileList] = useState(false);
     const handleLogout = async () => {
         try {
@@ -20,7 +22,7 @@ const Header = ({ elementos, email }) => {
                 }
             });
             await utilFunctions.summonSuccessMessage(response.data.message);
-            window.location.href = "/login";
+            navigate(0);
         } catch(err) {
             if(err.message === "Network Error") {
                 await utilFunctions.summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
@@ -51,7 +53,7 @@ const Header = ({ elementos, email }) => {
                 </div>
                 <div>
                     <ul>
-                        <li><Link onClick={handleLogout} to={"/login"}  className="a-span-text-icons"><FaSignOutAlt className="icons"/>Cerrar Sesión</Link></li>
+                        <li><a onClick={handleLogout} style={{cursor: "pointer"}} className="a-span-text-icons"><FaSignOutAlt className="icons"/>Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +76,7 @@ const Header = ({ elementos, email }) => {
                     </div>
                     <div>
                         <ul>
-                            <li><Link onClick={handleLogout} to={"/login"}  className="a-span-text-icons"><FaSignOutAlt className="icons"/> Cerrar Sesión</Link></li>
+                            <li><a onClick={handleLogout} style={{cursor: "pointer"}} className="a-span-text-icons"><FaSignOutAlt className="icons"/> Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/" : "/veterinaria-crud-sessions";
+console.log(redirectUrl)
 const summonErrorMessage = async (message) => {
     await Swal.fire({
         icon: "error",
@@ -40,7 +42,7 @@ const onSubmitLogin = async (e) => {
 
         })
         await summonSuccessMessage(request.data.message);
-        window.location.href = "/";
+        window.location.href = redirectUrl;
     } catch(err) {
         console.log(JSON.stringify(err.response.status))
         if(err.response.status === 404) {
@@ -72,8 +74,8 @@ const onSubmitRegister = async (e) => {
                 direccion: direccion
             }
 
-        })
-        window.location.href = "/";
+        });
+        window.location.href = redirectUrl
     } catch(err) {
         if(err.response.status === 404) {
             await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")

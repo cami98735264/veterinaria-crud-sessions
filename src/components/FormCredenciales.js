@@ -2,9 +2,12 @@ import loginContext from "../index.js";
 import { useContext } from "react";
 import { Navigate } from 'react-router-dom';
 
+
 const FormCredenciales = (props) => {
     const context = useContext(loginContext);
     console.log(context);
+    const generateRedirect = (keyword) => process.env.REACT_APP_PRODUCTION === "true" ? "/veterinaria-crud-sessions/#/" + keyword : "/#/" + keyword;               
+    
     return (
         <>
         {!context.isLogged ?
@@ -34,7 +37,7 @@ const FormCredenciales = (props) => {
             </div>
             <div className="bottom-credenciales">
                 <button className="boton-submit-credenciales">{props.motivo}</button>
-                <span className="span-link-credentials"><a href={props.motivo === "Iniciar Sesión" ? "/#/signup" : "/#/login"}>{props.motivo === "Iniciar Sesión" ? "Registrarse" : "Iniciar Sesión"}</a></span>
+                <span className="span-link-credentials"><a href={props.motivo === "Iniciar Sesión" ? generateRedirect("signup") : generateRedirect("login")}>{props.motivo === "Iniciar Sesión" ? "Registrarse" : "Iniciar Sesión"}</a></span>
             </div>
         </form> : <Navigate to={"/"} replace={true}></Navigate>}
         </>
