@@ -1,6 +1,7 @@
 {
   "short_name": "VeterinariaPWA",
   "name": "Create React App Sample",
+  "scope": "https://cami98735264.github.io/veterinaria-crud-sessions/#/",
   "icons": [
     {
       "src": "favicon.ico",
