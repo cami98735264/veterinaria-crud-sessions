@@ -1,7 +1,8 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
 
+const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/" : "/veterinaria-crud-sessions";
+console.log(redirectUrl)
 const summonErrorMessage = async (message) => {
     await Swal.fire({
         icon: "error",
@@ -25,6 +26,7 @@ const onSubmitLogin = async (e) => {
     e.preventDefault();
     const {email, contraseña} = {email: document.getElementById("email").value, contraseña: document.getElementById("contraseña").value};
     try {
+        // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
             url: "http://localhost:3000/api/auth/login",
@@ -40,9 +42,10 @@ const onSubmitLogin = async (e) => {
 
         })
         await summonSuccessMessage(request.data.message);
-        window.location.href = "/";
+        window.location.href = redirectUrl;
     } catch(err) {
-        if(err.message == "Network Error") {
+        console.log(JSON.stringify(err.response.status))
+        if(err.response.status === 404) {
             await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
         } else {
             await summonErrorMessage(err.response.data.message)
@@ -55,6 +58,7 @@ const onSubmitRegister = async (e) => {
     e.preventDefault();
     const {email, contraseña, telefono, direccion} = {email: document.getElementById("email").value, contraseña: document.getElementById("contraseña").value, telefono: document.getElementById("telefono").value, direccion: document.getElementById("direccion").value }
     try {
+        // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
             url: "http://localhost:3000/api/auth/register",
@@ -70,10 +74,10 @@ const onSubmitRegister = async (e) => {
                 direccion: direccion
             }
 
-        })
-        window.location.href = "/";
+        });
+        window.location.href = redirectUrl
     } catch(err) {
-        if(err.message == "Network Error") {
+        if(err.response.status === 404) {
             await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
         } else {
             await summonErrorMessage(err.response.data.message)
@@ -81,4 +85,5 @@ const onSubmitRegister = async (e) => {
     }
 }
 
-export default { onSubmitLogin, onSubmitRegister, summonErrorMessage, summonSuccessMessage }
+const submitFunctions = { onSubmitLogin, onSubmitRegister, summonErrorMessage, summonSuccessMessage }
+export default submitFunctions;

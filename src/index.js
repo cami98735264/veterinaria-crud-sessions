@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
+  createBrowserRouter, createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import funciones from './authorization_submits/index.js'
@@ -16,7 +16,7 @@ import reportWebVitals from './reportWebVitals';
 import Main from './components/Main.js';
 const loginContext = createContext();
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout/>,
     errorElement: <Page404 mensajeError={"Ha habido un error en la aplicación"}/>,
