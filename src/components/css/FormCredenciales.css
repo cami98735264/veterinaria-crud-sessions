@@ -32,6 +32,10 @@
   margin: 7px;
 }
 
+.formCredenciales .inputs-credenciales label {
+  /* Set a different color that matches all the black font color around, a nice gray */
+  color: #333;
+}
 .formCredenciales h1 {
   margin: 35px auto;
   text-align: center;
@@ -39,6 +43,7 @@
 }
 
 .formCredenciales button {
+  cursor: pointer;
   width: 100%;
   display: block;
   margin: 0 8px;
@@ -49,6 +54,11 @@
   color: #fff;
   background-color: rgb(85, 85, 194);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: background-color 0.3s ease-out;
+}
+
+.formCredenciales button:hover, .formCredenciales button:focus {
+  background-color: rgb(73, 73, 171);
 }
 
 .formCredenciales .span-link-credentials {

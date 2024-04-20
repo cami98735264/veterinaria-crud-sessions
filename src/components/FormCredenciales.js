@@ -18,20 +18,20 @@ const FormCredenciales = (props) => {
             <div className="inputs-credenciales">
                 <div>
                     <label htmlFor="email">Ingresa tu email:</label>
-                    <input type="email" id="email" required name="email"></input>
+                    <input type="email" id="email" required name="email" placeholder="juan123@gmail.com"></input>
                 </div>
                 <div>
                     <label htmlFor="contraseña">Ingresa tu contraseña:</label>
-                    <input type="password" id="contraseña" required name="contraseña"></input>
+                    <input type="password" id="contraseña" required name="contraseña" placeholder="$#hG_as$d@>_lty0"></input>
                 </div>
                 {props.esRegistro && <>
                     <div>
                     <label htmlFor="telefono">Ingresa tu número de teléfono:</label>
-                    <input type="tel" required name="telefono" id="telefono"></input>
+                    <input type="tel" required name="telefono" id="telefono" placeholder="312569xxxx"></input>
                 </div>
                 <div>
                     <label htmlFor="direccion">Ingresa tu dirección:</label>
-                    <input type="text" required name="direccion" id="direccion"></input>
+                    <input type="text" required name="direccion" id="direccion" placeholder="Avenida 3ra, Calle 51, Torres del Peñón. Bloque 21, Casa 5"></input>
                 </div>
                 </>} 
             </div>
