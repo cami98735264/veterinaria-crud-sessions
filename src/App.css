@@ -6,6 +6,7 @@
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
+  -webkit-user-drag: none;
 }
 .icons {
   color: #fff;
