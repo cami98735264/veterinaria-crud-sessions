@@ -4,6 +4,7 @@ import axios from "axios";
 import utilFunctions from "../authorization_submits/index.js";
 import { FaBars, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
+import RequestURL from "../authorization_submits/RequestURL.js";
 
 const Header = ({ elementos, email }) => {
     const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/#/login" : "/veterinaria-crud-sessions/#/login";
@@ -13,7 +14,7 @@ const Header = ({ elementos, email }) => {
     const handleLogout = async () => {
         try {
             const response = await axios({
-                url: "http://localhost:3000/api/auth/logout",
+                url: `http://${RequestURL}/api/auth/logout`,
                 method: "POST",
                 withCredentials: true,
                 headers: {

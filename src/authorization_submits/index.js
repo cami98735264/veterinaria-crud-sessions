@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import RequestURL from './RequestURL';
 
 const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/" : "/veterinaria-crud-sessions";
 console.log(redirectUrl)
@@ -29,7 +30,7 @@ const onSubmitLogin = async (e) => {
         // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
-            url: "http://localhost:3000/api/auth/login",
+            url: `${RequestURL}/api/auth/login`,
             method: "POST",
             headers: {
                 "Include": "application/json",
@@ -61,7 +62,7 @@ const onSubmitRegister = async (e) => {
         // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
-            url: "http://localhost:3000/api/auth/register",
+            url: `${RequestURL}/api/auth/register`,
             method: "POST",
             headers: {
                 "Include": "application/json",

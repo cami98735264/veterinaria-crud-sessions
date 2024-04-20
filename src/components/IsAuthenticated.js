@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import loginContext from "../index.js";
 import axios from "axios";
+import RequestURL from "../authorization_submits/RequestURL.js";
 
 const IsAuthenticated = ({ children }) => {
     const [userData, setUserData] = useState({});
@@ -8,7 +9,7 @@ const IsAuthenticated = ({ children }) => {
     useEffect(() => {
         const fetchIsAuthenticated = async () => {
             try {
-                const request = await axios.get("http://localhost:3000/api/auth/check", {
+                const request = await axios.get(`${RequestURL}/api/auth/check`, {
                     withCredentials: true,
                     headers: {
                         "Content-Type": "application/json",
