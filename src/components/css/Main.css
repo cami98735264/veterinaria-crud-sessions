@@ -1,0 +1,33 @@
+.mainSection {
+    margin: 10vh auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-mainsection-container *:not(ul, li){
+    margin: 25px 10px;
+}
+
+.text-mainsection-container {
+    font-size: 1.1em;
+}
+
+.text-mainsection-container h3 {
+    color: #7d2181;
+    text-underline-offset: 6px;
+    font-size: 1.5em;
+}
+.mainSection ul li {
+    margin: 5px 10px;
+    list-style: none;
+}
+
+.mainSection img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+.mainSection a {
+    color: #0000EE;
+}

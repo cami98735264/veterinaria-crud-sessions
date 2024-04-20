@@ -1,0 +1,64 @@
+.formCredenciales input {
+  width: 100%;
+}
+
+
+.formCredenciales {
+  margin: 20vh auto;
+  width: 450px;
+  max-width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.formCredenciales input {
+  font-size: 1em;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  outline: none;
+  padding: 8px;
+  border-radius: 8px;
+
+  border: none;
+}
+.formCredenciales > * {
+  margin: 20px 0;
+}
+
+.formCredenciales .inputs-credenciales > * {
+  margin: 8px 0;
+}
+.formCredenciales .inputs-credenciales input, label {
+  margin: 7px;
+}
+
+.formCredenciales h1 {
+  margin: 35px auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.formCredenciales button {
+  width: 100%;
+  display: block;
+  margin: 0 8px;
+  padding: 9px;
+  font-size: 19px;
+  border-radius: 7px;
+  border: none;
+  color: #fff;
+  background-color: rgb(85, 85, 194);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.formCredenciales .span-link-credentials {
+  display: block;
+  margin: 29px 8px;
+}
+
+@media only screen and (max-width: 524px) {
+  .formCredenciales {
+    width: 90%;
+  }
+
+}

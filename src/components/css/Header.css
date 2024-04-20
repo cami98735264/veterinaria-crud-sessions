@@ -1,5 +1,6 @@
 .mainNav .main-mobile {
     display: none;
+    top: 0;
 }
 
 .mainNav .main ul li {
@@ -17,6 +18,8 @@
     list-style: none;
 }
 .mainNav {
+    top: 0;
+    position: sticky;
     background-color: rgb(85, 85, 194);
 }
 .mainNav .main {
@@ -58,6 +61,7 @@
     }
     .mainNav .main-mobile {
         display: unset;
+        position: sticky;
     }
     .mainNav .main-mobile .main-mobile-minimized {
         display: flex;
@@ -67,5 +71,12 @@
         color: #fff;
         padding: 20px;
         text-decoration: none;
+    }
+    .mainSection {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mainSection h3 {
+        text-align: center;
     }
 }
