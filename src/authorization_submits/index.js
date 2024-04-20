@@ -44,8 +44,8 @@ const onSubmitLogin = async (e) => {
         await summonSuccessMessage(request.data.message);
         window.location.href = redirectUrl;
     } catch(err) {
-        console.log(JSON.stringify(err.response.status))
-        if(err.response.status === 404) {
+        console.log(JSON.stringify(err));
+        if(err.code === "ERR_NETWORK") {
             await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
         } else {
             await summonErrorMessage(err.response.data.message)
@@ -77,7 +77,7 @@ const onSubmitRegister = async (e) => {
         });
         window.location.href = redirectUrl
     } catch(err) {
-        if(err.response.status === 404) {
+        if(err.code === "ERR_NETWORK") {
             await summonErrorMessage("Ha ocurrido un error al intentar acceder a la API del servidor, al parecer se encuentra caida.")
         } else {
             await summonErrorMessage(err.response.data.message)
