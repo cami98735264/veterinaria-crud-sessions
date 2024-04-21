@@ -1,7 +1,7 @@
-import loginContext from "../index.js";
+import loginContext from "../../index.js";
 import { useContext } from "react";
 import { Navigate } from 'react-router-dom';
-import './css/FormCredenciales.css';
+import './FormCredenciales.css';
 
 const FormCredenciales = (props) => {
     const context = useContext(loginContext);

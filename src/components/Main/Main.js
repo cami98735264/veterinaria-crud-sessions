@@ -1,14 +1,14 @@
 import { useContext } from "react"
-import loginContext from "../index.js";
+import loginContext from "../../index.js";
 import { Navigate } from "react-router-dom";
-import Header from "./Header.js";
+import Header from "../Header/Header.js";
 import { Link } from 'react-router-dom';
 import { GrConfigure } from "react-icons/gr";
 import { FaFolderPlus } from "react-icons/fa6";
 import { MdAssignmentAdd } from "react-icons/md";
 import { MdFolderOff } from "react-icons/md";
-import "./css/Main.css";
-import veterinarioSvg from '../assets/vet-png.png'
+import "./Main.css";
+import veterinarioSvg from '../../assets/vet-png.png'
 
 const linksHeader = [{id: 4, nombre: "Configuración de la cuenta", url: "/account/config", icon: <GrConfigure className="icons" />}, {id: 3, nombre: "Citas Agendadas", url: "/citas", icon: <FaFolderPlus className="icons"/> }, {id: 2, nombre: "Cancelar Cita", url: "/citas/cancelar", icon: <MdFolderOff className="icons"/>}, {id: 1, nombre: "Agendar Cita", url: "/citas/agendar", icon: <MdAssignmentAdd className="icons"/>}];
 const Main = () => {

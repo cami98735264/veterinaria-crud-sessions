@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./css/Header.css";
+import "./Header.css";
 import axios from "axios";
-import utilFunctions from "../authorization_submits/index.js";
+import utilFunctions from "../../authorization_submits/index.js";
 import { FaBars, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
-import RequestURL from "../authorization_submits/RequestURL.js";
+import RequestURL from "../../authorization_submits/RequestURL.js";
 
 const Header = ({ elementos, email }) => {
     const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/#/login" : "/veterinaria-crud-sessions/#/login";

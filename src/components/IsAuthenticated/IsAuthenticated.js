@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import loginContext from "../index.js";
+import loginContext from "../../index.js";
 import axios from "axios";
-import RequestURL from "../authorization_submits/RequestURL.js";
+import RequestURL from "../../authorization_submits/RequestURL.js";
 
 const IsAuthenticated = ({ children }) => {
     const [userData, setUserData] = useState({});

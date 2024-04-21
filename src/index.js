@@ -5,15 +5,15 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import funciones from './authorization_submits/index.js'
-import IsAuthenticated from './components/IsAuthenticated.js';
+import IsAuthenticated from './components/IsAuthenticated/IsAuthenticated.js';
 import './index.css';
-import FormCredenciales from './components/FormCredenciales.js';
-import Page404 from './components/page404.js';
-import Layout from './components/Layout.js';
+import FormCredenciales from './components/FormCredenciales/FormCredenciales.js';
+import Page404 from './components/Page404/page404.js';
+import Layout from './components/Layout/Layout.js';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import Main from './components/Main.js';
+import Main from './components/Main/Main.js';
 const loginContext = createContext();
 
 const router = createHashRouter([
