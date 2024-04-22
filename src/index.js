@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter, createHashRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import funciones from './authorization_submits/index.js'
@@ -14,6 +14,9 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Main from './components/Main/Main.js';
+import AgendarCita from './components/AgendarCita/AgendarCita.js';
+import CancelarCita from './components/CancerlarCita/CancelarCita.js';
+import CitasAgendadas from './components/CitasAgendadas/CitasAgendadas.js';
 const loginContext = createContext();
 
 const router = createHashRouter([
@@ -33,6 +36,18 @@ const router = createHashRouter([
       {
         path: "/signup",
         element: <FormCredenciales motivo={"Registrarse"} onSubmit={funciones.onSubmitRegister} esRegistro={true}/>
+      },
+      {
+        path: "/citas/listar",
+        element: <CitasAgendadas/>
+      },
+      {
+        path: "/citas/agendar",
+        element: <AgendarCita/>
+      },
+      {
+        path: "/citas/cancelar",
+        element: <CancelarCita/>
       },
       {
         path: "*",

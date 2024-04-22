@@ -1,0 +1,71 @@
+/* Stylize all tables following a milimalist look like the one I've used in forms /*
+
+/* Table */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1rem;
+  color: #212529;
+  margin: 20vh auto;
+}
+
+/* Add a border to the table */
+table {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+
+}
+/* Table Head */
+thead {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Table Head Cell */
+th {
+  padding: 0.75rem;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Table Body */
+
+tbody {
+  color: #212529;
+}
+
+/* Table Body Row */
+
+tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+
+/* Table Body Cell */
+
+td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+
+/* Table Hover Effect */
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+
+/* Table Striped Rows */
+
+tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Align tbody text to the center */
+
+tbody td {
+  text-align: center;
+}

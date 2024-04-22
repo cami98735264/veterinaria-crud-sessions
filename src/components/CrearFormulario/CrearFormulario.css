@@ -1,0 +1,78 @@
+.custom-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 20vh auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgba(0, 0, 0, 0.23) 0px 2px 4px;
+    background-color: #fff;
+
+}
+
+.custom-formulario input {
+    width: 100%;
+    font-size: 1em;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+
+
+
+.custom-formulario select, label {
+    margin: 7px;
+}
+
+/* add the media query to the css file */
+@media (max-width: 524px) {
+    .custom-formulario {
+        margin: 10vh auto;
+        width: 90%;
+        
+    }
+}
+.custom-formulario select {
+    width: 100%;
+    font-size: 1em;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    outline: none;
+    margin: 8px auto;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+
+}
+
+.custom-formulario > * {
+    margin: 20px 0;
+}
+
+.custom-formulario button {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+    font-size: 19px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: rgb(85, 85, 194);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: background-color 0.3s ease-out;
+
+}
+
+.custom-formulario button:hover, .custom-formulario button:focus {
+    background-color: rgb(73, 73, 171);
+}
+.custom-formulario h3 {
+    font-size: 1.4em;
+    text-align: center;
+}

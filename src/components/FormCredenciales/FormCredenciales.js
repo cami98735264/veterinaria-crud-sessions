@@ -5,7 +5,6 @@ import './FormCredenciales.css';
 
 const FormCredenciales = (props) => {
     const context = useContext(loginContext);
-    console.log(context);
     const generateRedirect = (keyword) => process.env.REACT_APP_PRODUCTION === "true" ? "/veterinaria-crud-sessions/#/" + keyword : "/#/" + keyword;               
     
     return (

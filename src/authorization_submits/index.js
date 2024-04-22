@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import RequestURL from './RequestURL';
+import RequestURL from '../utils/RequestURL';
 
 const redirectUrl = process.env.REACT_APP_PRODUCTION === "false" ? "/" : "/veterinaria-crud-sessions";
 console.log(redirectUrl)
