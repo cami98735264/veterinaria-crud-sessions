@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/veterinaria-crud-sessions/static/css/main.3b5e7d5b.css",
-    "main.js": "/veterinaria-crud-sessions/static/js/main.01f2e671.js",
+    "main.css": "/veterinaria-crud-sessions/static/css/main.b6821c2f.css",
+    "main.js": "/veterinaria-crud-sessions/static/js/main.c88ef3cd.js",
     "static/js/453.8ab44547.chunk.js": "/veterinaria-crud-sessions/static/js/453.8ab44547.chunk.js",
     "static/media/vet-png.png": "/veterinaria-crud-sessions/static/media/vet-png.f3a27233c713d7ac5bde.png",
     "service-worker.js": "/veterinaria-crud-sessions/service-worker.js",
     "index.html": "/veterinaria-crud-sessions/index.html",
-    "main.3b5e7d5b.css.map": "/veterinaria-crud-sessions/static/css/main.3b5e7d5b.css.map",
-    "main.01f2e671.js.map": "/veterinaria-crud-sessions/static/js/main.01f2e671.js.map",
+    "main.b6821c2f.css.map": "/veterinaria-crud-sessions/static/css/main.b6821c2f.css.map",
+    "main.c88ef3cd.js.map": "/veterinaria-crud-sessions/static/js/main.c88ef3cd.js.map",
     "453.8ab44547.chunk.js.map": "/veterinaria-crud-sessions/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b5e7d5b.css",
-    "static/js/main.01f2e671.js"
+    "static/css/main.b6821c2f.css",
+    "static/js/main.c88ef3cd.js"
   ]
 }
