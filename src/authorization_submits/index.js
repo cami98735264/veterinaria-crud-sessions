@@ -30,7 +30,7 @@ const onSubmitLogin = async (e) => {
         // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
-            url: `${RequestURL}/api/auth/login`,
+            url: `/api/auth/login`,
             method: "POST",
             headers: {
                 "Include": "application/json",
@@ -62,7 +62,7 @@ const onSubmitRegister = async (e) => {
         // eslint-disable-next-line
         const request = await axios({
             withCredentials: true,
-            url: `${RequestURL}/api/auth/register`,
+            url: `/api/auth/register`,
             method: "POST",
             headers: {
                 "Include": "application/json",

@@ -12,7 +12,7 @@ const Header = ({ elementos, email }) => {
     const handleLogout = async () => {
         try {
             const response = await axios({
-                url: `${RequestURL}/api/auth/logout`,
+                url: `/api/auth/logout`,
                 method: "POST",
                 withCredentials: true,
                 headers: {

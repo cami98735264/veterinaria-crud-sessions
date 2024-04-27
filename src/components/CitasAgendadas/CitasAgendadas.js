@@ -10,7 +10,7 @@ const CitasAgendadas = () => {
     useEffect(() => {
         const fetchConsultas = async () => {
             try {
-                const request = await axios.get(`${RequestURL}/api/consultas/get`, {
+                const request = await axios.get(`/api/consultas/get`, {
                     withCredentials: true,
                     headers: {
                         "Content-Type": "application/json",

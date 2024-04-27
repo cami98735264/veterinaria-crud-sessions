@@ -8,7 +8,7 @@ const handleCancelarCita = async (e) => {
     try {
         const request = await axios({
             withCredentials: true,
-            url: `${RequestURL}/api/consultas/delete`,
+            url: `/api/consultas/delete`,
             method: "POST",
             headers: {
                 "Include": "application/json",

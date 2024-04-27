@@ -14,7 +14,7 @@ const AgendarCita = () => {
     useEffect(() => {
         const getTipoAnimales = async () => {
             try {
-                const request = await axios.get(`${RequestURL}/api/animales/get`, {
+                const request = await axios.get(`/api/animales/get`, {
                     withCredentials: true,
                     headers: {
                         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const AgendarCita = () => {
         }
         const getTipoConsultas = async () => {
             try {
-                const request = await axios.get(`${RequestURL}/api/tipoconsultas/get`, {
+                const request = await axios.get(`/api/tipoconsultas/get`, {
                     withCredentials: true,
                     headers: {
                         "Content-Type": "application/json",

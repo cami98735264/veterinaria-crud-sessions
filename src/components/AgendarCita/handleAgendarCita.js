@@ -9,7 +9,7 @@ const handleAgendarCita = async (e) => {
     try {
         const request = await axios({
             withCredentials: true,
-            url: `${RequestURL}/api/consultas/create`,
+            url: `/api/consultas/create`,
             method: "POST",
             headers: {
                 "Include": "application/json",
