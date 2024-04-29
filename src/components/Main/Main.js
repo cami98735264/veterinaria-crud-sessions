@@ -1,7 +1,5 @@
 import { useContext } from "react"
 import loginContext from "../../index.js";
-import { Navigate } from "react-router-dom";
-import Header from "../Header/Header.js";
 import { Link } from 'react-router-dom';
 import "./Main.css";
 import veterinarioSvg from '../../assets/vet-png.png'
@@ -16,7 +14,7 @@ const Main = () => {
     return (
         <LoggerHandler redirectUrl={"/login"} isLogged={isLogged}>
             <section className="mainSection">
-                <div>
+                <div className="img-main">
                     <img src={veterinarioSvg} alt="veterina-img"></img>
                 </div>
                 <div className='text-mainsection-container'>

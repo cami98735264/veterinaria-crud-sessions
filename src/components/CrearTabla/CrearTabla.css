@@ -2,11 +2,13 @@
 
 /* Table */
 table {
+  display: block;
   width: 90%;
   border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 1rem;
   color: #212529;
+  overflow: auto;
   margin: 20vh auto;
 }
 

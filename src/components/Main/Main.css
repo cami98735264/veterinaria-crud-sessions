@@ -24,6 +24,7 @@
 }
 
 .mainSection img {
+    mask-image: linear-gradient(#000 80%, transparent);
     display: block;
     margin: 0 auto;
     width: 90%;
