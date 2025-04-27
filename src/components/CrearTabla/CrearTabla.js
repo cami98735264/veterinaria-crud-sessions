@@ -2,7 +2,6 @@ import "./CrearTabla.css";
 
 
 const CrearTabla = ({ titulos, elementos }) => {
-    // Suppose that titulos is an array like: ["ID de Usuario", "ID de Consulta", "Tipo de Animal", "Tipo de Consulta", "Fecha", "Estado"] and elementos is an array like: 
     /* [{
     "id_usuario": 9,
     "id_consulta": 5,

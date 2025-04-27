@@ -1,5 +1,5 @@
 {
-  "proxy": "http://192.168.1.7:4000",
+  "proxy": "http://localhost:4000",
   "name": "frontend",
   "homepage": "https://cami98735264.github.io/veterinaria-crud-sessions",
   "version": "0.2.0",
